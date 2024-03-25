@@ -1,9 +1,12 @@
-/* eslint-disable prettier/prettier */
 import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import Logo from '../../assets/icon/Logo.svg';
 
-const SplashScreen = () => {
+const SplashScreen = ({navigation}) => {
+  useEffect(() => {
+    setTimeout(() => navigation.replace('SignIn'), 3000);
+  }, [navigation]);
+
   return (
     <View style={styles.container}>
       <Logo />
